@@ -9,9 +9,6 @@ const credentials = {
     private_key:config.googlePrivateKey
 }
 
-console.log(config.googlePrivateKey);
-
-
 const structjson = require('./structjson');
 const sessionClient = new dialogflow.SessionsClient({projectID:projectID, credentials:credentials});
 

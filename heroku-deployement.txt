@@ -10,3 +10,9 @@
 6. link the git url from step 5 with your project
 	git remote add heroku "heroku git step 5 url"
 7. git push heroku master
+8. Heroku is not able to parse google_private_key properly a workaround it is that 
+add that key with double quotes in heroku console and use     googlePrivateKey:JSON.parse(process.env.GOOGLE_PRIVATE_KEY)
+in config
+9. To build react files make changes to the index.js to resolve react routes
+10. Add this to express package.json scripts
+ "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"

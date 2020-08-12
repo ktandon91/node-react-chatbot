@@ -1,0 +1,12 @@
+1. In package.json add
+ "engines": {
+    "node":"",
+    "npm": ""}
+2. add start command in package json
+	node index.js
+3. heroku login
+4. heroku create 
+5. heroku create command will give 2 urls, 1 will be where we can directly access the app, other will be of git.
+6. link the git url from step 5 with your project
+	git remote add heroku "heroku git step 5 url"
+7. git push heroku master

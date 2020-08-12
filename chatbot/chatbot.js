@@ -2,10 +2,17 @@
 
 const dialogflow=require('dialogflow');
 const config= require('../config/keys');
-const structjson = require('./structjson')
-const sessionClient = new dialogflow.SessionsClient();
-const mongoose = require('mongoose');
 
+const projectID = config.googleProjectID;
+const credentials = {
+    client_email: config.googleClientEmail,
+    private_key:config.googlePrivateKey
+}
+
+const structjson = require('./structjson');
+const sessionClient = new dialogflow.SessionsClient({projectID:projectID, credentials:credentials});
+
+const mongoose = require('mongoose');
 const Registration = mongoose.model('registration');
 
 module.exports = {

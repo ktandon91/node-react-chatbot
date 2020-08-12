@@ -9,6 +9,9 @@ const credentials = {
     private_key:config.googlePrivateKey
 }
 
+console.log(config.googlePrivateKey);
+
+
 const structjson = require('./structjson');
 const sessionClient = new dialogflow.SessionsClient({projectID:projectID, credentials:credentials});
 
@@ -18,7 +21,6 @@ const Registration = mongoose.model('registration');
 module.exports = {
     textQuery: async function(text, userID, parameters = {}) {
         let sessionPath = sessionClient.sessionPath(config.googleProjectID, config.dialogFlowSessionID + userID);
-
         let self = module.exports;
         const request = {
             session: sessionPath,
